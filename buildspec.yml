@@ -3,10 +3,13 @@ phases:
   pre_build:
     commands:
       - echo "Entered the pre-build phase"
+  install:
+    runtime-versions:
+      java: 1.8
   build:
     commands:
       - echo "Entered build phase"
-      - mvn clean prepare war:explode
+      - mvn clean prepare war:exploded
   post_build:
     commands:
       - echo "Entered the post-build phase"
